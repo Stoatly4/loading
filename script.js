@@ -19,7 +19,7 @@ setInterval(() => {
 	timerDisplay.textContent = `Time elapsed: ${parts.join(", ")}`;
 }, 1000);
 
-setInterval(() => {
+const updateSplashText = () => {
 	const splashes = [
 		"Loading...",
 		"Thank you for your patience...",
@@ -29,6 +29,10 @@ setInterval(() => {
 		"Don't exit this page while loading...",
 		"Nearly ready..."
 	];
-	
+
 	splashText.textContent = splashes[Math.floor(Math.random() * splashes.length)];
-}, Math.random() * 60000 + 30000 );
+
+	setTimeout(updateSplashText, Math.random() * 60000 + 30000);
+};
+
+setTimeout(updateSplashText, Math.random() * 60000 + 30000);
